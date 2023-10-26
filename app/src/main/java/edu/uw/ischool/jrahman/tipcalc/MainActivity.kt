@@ -51,14 +51,6 @@ class MainActivity : AppCompatActivity() {
 
         tipButton?.setOnClickListener {
             val amount = serviceChargeEditText?.text.toString().removePrefix("$").toDoubleOrNull()
-            if (amount != null) {
-                val tip = amount * 0.15
-                Toast.makeText(this, String.format("$%.2f", tip), Toast.LENGTH_LONG).show()
-            }
-        }
-
-        tipButton?.setOnClickListener {
-            val amount = serviceChargeEditText?.text.toString().removePrefix("$").toDoubleOrNull()
             val selectedPercentage = when (tipPercentageSpinner?.selectedItem?.toString()) {
                 "10%" -> 0.10
                 "15%" -> 0.15
